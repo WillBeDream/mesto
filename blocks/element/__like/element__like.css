@@ -1,0 +1,7 @@
+.element__like {
+    width: 22px;
+    height: 19px;
+    margin: 30px 20px 30px 0px;
+    border: none;
+    background-image: url(../../../images/like.png);
+}

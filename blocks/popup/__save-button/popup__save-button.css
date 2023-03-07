@@ -11,3 +11,11 @@
     border-radius: 2px;
     padding: 0;
 }
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .popup__save-button {
+        font-size: 14px;
+        line-height: 17px;
+        width: 100%;
+    }
+}

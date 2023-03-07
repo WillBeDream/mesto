@@ -6,3 +6,15 @@
     color: #545454;
     margin: 0;
 }
+
+@media (min-width: 768px) and (max-width: 900px) {
+    .footer__text {
+        margin-left: 27px;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+    .footer__text {
+        margin-left: 19px;
+    }
+}

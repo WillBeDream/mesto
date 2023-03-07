@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="pages/index.css"
+    <link rel="stylesheet" href="pages/index.css">
 </head>
 <body class="root">
     <div class="page">
@@ -13,7 +13,7 @@
 
         <main class="content">
             <section class="profile">
-                <img src="./images/profile__avatar.svg" alt="" class="profile__avatar">
+                <img src="./images/profile__avatar.svg" alt="аватар" class="profile__avatar">
                 <div class="profile__info">
                     <div class="profile__title-but">
                         <h2 class="profile__title">Жак-Ив Кусто</h2>
@@ -26,7 +26,7 @@
 
             <section class="elements">
                 <div class="element">
-                    <img src="./images/карачаевск.jpg" alt="" class="element__photo">
+                    <img src="./images/карачаевск.jpg" alt="картинка1" class="element__photo">
                     <div class="element__text-like">
                         <p class="element__text">Карачаевск</p>
                         <button type="button" class="element__like"></button>
@@ -34,7 +34,7 @@
                 </div>
 
                 <div class="element">
-                    <img src="./images/карачаевск.jpg" alt="" class="element__photo">
+                    <img src="./images/карачаевск.jpg" alt="картинка2" class="element__photo">
                     <div class="element__text-like">
                         <p class="element__text">Карачаевск</p>
                         <button type="button" class="element__like"></button>
@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="element">
-                    <img src="./images/карачаевск.jpg" alt="" class="element__photo">
+                    <img src="./images/карачаевск.jpg" alt="картинка3" class="element__photo">
                     <div class="element__text-like">
                         <p class="element__text">Карачаевск</p>
                         <button type="button" class="element__like"></button>
@@ -50,7 +50,7 @@
                 </div>
 
                 <div class="element">
-                    <img src="./images/карачаевск.jpg" alt="" class="element__photo">
+                    <img src="./images/карачаевск.jpg" alt="картинка4" class="element__photo">
                     <div class="element__text-like">
                         <p class="element__text">Карачаевск</p>
                         <button type="button" class="element__like"></button>
@@ -58,7 +58,7 @@
                 </div>
 
                 <div class="element">
-                    <img src="./images/карачаевск.jpg" alt="" class="element__photo">
+                    <img src="./images/карачаевск.jpg" alt="картинка5" class="element__photo">
                     <div class="element__text-like">
                         <p class="element__text">Карачаевск</p>
                         <button type="button" class="element__like"></button>
@@ -66,7 +66,7 @@
                 </div>
 
                 <div class="element">
-                    <img src="./images/карачаевск.jpg" alt="" class="element__photo">
+                    <img src="./images/карачаевск.jpg" alt="картинка6" class="element__photo">
                     <div class="element__text-like">
                         <p class="element__text">Карачаевск</p>
                         <button type="button" class="element__like"></button>
@@ -79,19 +79,19 @@
             <p class="footer__text">© 2020 Mesto Russia</p>
         </footer>
 
-        <div class="popup popup-opened">
-            <div class="popup__container"> 
+        <div class="popup">
+            <form class="popup__container"> 
                 <button class="popup__close"></button>
                 <h2 class="popup__title">Редактировать профиль</h2>
                 <fieldset class="popup__set">
-                    <input type="text" class="popup__text">
-                    <input type="text" class="popup__text">
+                    <input type="text" class="popup__text" id="title">
+                    <input type="text" class="popup__text" id="description">
                 </fieldset>
-                <button type="button" class="popup__save-button">Сохранить</button>
-            </div>
+                <button type="submit" class="popup__save-button">Сохранить</button>
+            </form>
         </div>
     </div>
     
-    
+    <script src="scripts/script.js"></script>
 </body>
 </html>

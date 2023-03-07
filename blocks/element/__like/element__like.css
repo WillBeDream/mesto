@@ -4,4 +4,10 @@
     margin: 30px 20px 30px 0px;
     border: none;
     background-image: url(../../../images/like.png);
+    padding: 0;
 }
+
+.element__like:hover {
+    opacity: 0.5;
+}
+

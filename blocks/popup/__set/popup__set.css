@@ -6,3 +6,9 @@
     border: none;
     gap: 30px;
 }
+
+@media (max-width: 767px) {
+    .popup__set {
+        margin: 0px 0px 45px;
+    }
+}

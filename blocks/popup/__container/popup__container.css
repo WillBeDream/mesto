@@ -6,10 +6,7 @@
     border-radius: 10px;
     padding: 34px 36px 37px;
     box-sizing: border-box;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
 }
 
 @media (min-width: 320px) and (max-width: 767px) {

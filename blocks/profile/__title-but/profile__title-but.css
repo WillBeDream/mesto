@@ -2,3 +2,10 @@
     display: flex;
     align-items: flex-end;
 }
+
+@media (max-width: 767px) {
+    .profile__title-but {
+        max-width: 217px;
+        margin: 0 auto; 
+    }
+}

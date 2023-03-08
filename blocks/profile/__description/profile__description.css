@@ -5,10 +5,14 @@
     line-height: 22px;
     color: #FFFFFF;
     margin: 16px 0px 0px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
     .profile__description {
+        max-width: 282px;
         text-align: center;
         font-size: 14px;
         line-height: 17px;

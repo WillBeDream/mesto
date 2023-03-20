@@ -1,0 +1,13 @@
+.element__remove {
+    width: 19px;
+    height: 19px;
+    position: absolute;
+    background-image: url(../../../images/Trash.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    top: 20px;
+    right: 20px;
+}

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="pages/index.css">
     <title>mesto</title>
 </head>
+
 <body class="root">
     <div class="page">
         <header class="header">
@@ -26,53 +28,59 @@
             </section>
 
             <section class="elements">
-                <div class="element">
+                <!--<article class="element">
                     <img src="./images/карачаевск.jpg" alt="карачаевск" class="element__photo">
+                    <button class="element__remove"></button>
                     <div class="element__text-like">
                         <h2 class="element__text">Карачаевск</h2>
                         <button type="button" class="element__like"></button>
                     </div>
-                </div>
+                </article>
 
-                <div class="element">
+                <article class="element">
                     <img src="./images/карачаевск.jpg" alt="карачаевск" class="element__photo">
+                    <button class="element__remove"></button>
                     <div class="element__text-like">
                         <h2 class="element__text">Карачаевск</h2>
                         <button type="button" class="element__like"></button>
                     </div>
-                </div>
+                </article>
 
-                <div class="element">
+                <article class="element">
                     <img src="./images/карачаевск.jpg" alt="карачаевск" class="element__photo">
+                    <button class="element__remove"></button>
                     <div class="element__text-like">
                         <h2 class="element__text">Карачаевск</h2>
                         <button type="button" class="element__like"></button>
                     </div>
-                </div>
+                </article>
 
-                <div class="element">
+                <article class="element">
                     <img src="./images/карачаевск.jpg" alt="карачаевск" class="element__photo">
+                    <button class="element__remove"></button>
                     <div class="element__text-like">
                         <h2 class="element__text">Карачаевск</h2>
                         <button type="button" class="element__like"></button>
                     </div>
-                </div>
+                </article>
 
-                <div class="element">
+                <article class="element">
                     <img src="./images/карачаевск.jpg" alt="карачаевск" class="element__photo">
+                    <button class="element__remove"></button>
                     <div class="element__text-like">
                         <h2 class="element__text">Карачаевск</h2>
                         <button type="button" class="element__like"></button>
                     </div>
-                </div>
+                </article>
 
-                <div class="element">
+                <article class="element">
                     <img src="./images/карачаевск.jpg" alt="карачаевск" class="element__photo">
+                    <button class="element__remove"></button>
                     <div class="element__text-like">
                         <h2 class="element__text">Карачаевск</h2>
                         <button type="button" class="element__like"></button>
                     </div>
-                </div>
+                </article>-->
             </section>
         </main>
 
@@ -80,20 +88,53 @@
             <p class="footer__text">© 2020 Mesto Russia</p>
         </footer>
 
-        <div class="popup">
+        <div class="popup popup-edit">
             <div class="popup__container">
                 <button type="button" class="popup__close"></button>
                 <h2 class="popup__title">Редактировать профиль</h2>
-                <form class="popup__set">
+                <form class="popup__set" name="edit-form">
                     <input type="text" class="popup__text" id="title" name="title">
                     <input type="text" class="popup__text" id="description" name="description">
-                    <button type="submit" class="popup__save-button">Сохранить</button>
+                    <button type="submit" class="popup__save-button" id="popup__edit-button">Сохранить</button>
                 </form>
-                
             </div>
         </div>
+
+        <div class="popup popup-add">
+            <div class="popup__container">
+                <button type="button" class="popup__close"></button>
+                <h2 class="popup__title">Новое место</h2>
+                <form class="popup__set" name="add-form" >
+                    <input type="text" class="popup__text" id="add-title" name="add-title" placeholder="Название">
+                    <input type="text" class="popup__text" id="add-description" name="add-description"
+                        placeholder="Ссылка на картинку">
+                    <button type="submit" class="popup__save-button" id="popup__add-button">Создать</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="popup popup-show-image">
+            <div class="popup__image-container">
+                <img src="./images/карачаевск.jpg" alt="карачаевск" class="popup__image">
+                <p class="popup__description"></p>
+                <button type="button" class="popup__close"></button>
+            </div> 
+        </div>
+
     </div>
-    
+
+    <template id="element-template">
+        <article class="element">
+            <img src="./images/карачаевск.jpg" alt="карачаевск" class="element__photo">
+            <button class="element__remove"></button>
+            <div class="element__text-like">
+                <h2 class="element__text"></h2>
+                <button type="button" class="element__like"></button>
+            </div>
+        </article>
+    </template>
+
     <script src="scripts/index.js"></script>
 </body>
+
 </html>

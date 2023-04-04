@@ -16,6 +16,8 @@ const title = document.querySelector('#add-title');
 const link = document.querySelector('#add-description');
 const cardTemplate = document.querySelector('#element-template').content;
 const cardsContainer = document.querySelector('.elements');
+const overlay = document.body;
+const popups = document.querySelectorAll('.popup');
 
 function openPopup(popupWindow) {
     popupWindow.classList.add('popup_opened');
@@ -84,10 +86,29 @@ initialCards.forEach(function (card) {
 profileAddBtn.addEventListener('click', openAddPopup);
 profileEditForm.addEventListener('submit', handleProfileFormSubmit);
 buttonEditProfile.addEventListener('click', openEditPopup);
+overlay.addEventListener('keydown', (evt)=> {
+  if(evt.key==="Escape") {
+    closePopup(popupEdit);
+    closePopup(popupAdd);
+    closePopup(popupImage);
+  }
+})
 
 for (const btn of btnsClosePopup) {
-    btn.addEventListener('click', () => {
+    btn.addEventListener('click', (evt) => {
         const popupFind = btn.closest('.popup');
         closePopup(popupFind);
-    })
+    });
+}
+
+for(const btn of popups) {
+  btn.addEventListener('click', (evt) => {
+    if(evt.target !== evt.currentTarget) {
+     return;
+    }
+    else {
+      const popupFind = btn.closest(".popup");
+      closePopup(popupFind);
+    }
+  })
 }

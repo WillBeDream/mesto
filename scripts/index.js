@@ -1,5 +1,4 @@
 const buttonEditProfile = document.querySelector('.profile__edit-button'); //editBtn
-const btnsClosePopup = document.querySelectorAll('.popup__close'); //closeBtns
 const popupEdit = document.querySelector('.popup-edit');
 const popupAdd = document.querySelector('.popup-add');
 const profileTitle = document.querySelector('.profile__title');
@@ -19,12 +18,21 @@ const cardsContainer = document.querySelector('.elements');
 const overlay = document.body;
 const popups = document.querySelectorAll('.popup');
 
+function closeByEscape(evt) {
+  if (evt.key === "Escape") {
+    const popupFind = document.querySelector(".popup_opened");
+    closePopup(popupFind);
+  }
+}
+
 function openPopup(popupWindow) {
-    popupWindow.classList.add('popup_opened');
+  popupWindow.classList.add("popup_opened");
+  overlay.addEventListener("keydown", closeByEscape);
 }
 
 function closePopup(popupWindow) {
     popupWindow.classList.remove('popup_opened');
+    overlay.removeEventListener('keydown', closeByEscape);
 }
 
 function openEditPopup() {
@@ -42,6 +50,11 @@ function handleProfileFormSubmit(evt) {
     profileTitle.textContent = textEditTitle.value;
     profileDescription.textContent = textEditDescription.value;
     closePopup(popupEdit);
+}
+
+function handleAddCardSubmit(evt) {
+  evt.preventDefault;
+  enableValidation(enableValidationConfig);
 }
 
 function createCard(cardData) {
@@ -86,29 +99,15 @@ initialCards.forEach(function (card) {
 profileAddBtn.addEventListener('click', openAddPopup);
 profileEditForm.addEventListener('submit', handleProfileFormSubmit);
 buttonEditProfile.addEventListener('click', openEditPopup);
-overlay.addEventListener('keydown', (evt)=> {
-  if(evt.key==="Escape") {
-    closePopup(popupEdit);
-    closePopup(popupAdd);
-    closePopup(popupImage);
-  }
-})
+cardAddForm.addEventListener('submit', handleAddCardSubmit);
 
-for (const btn of btnsClosePopup) {
-    btn.addEventListener('click', (evt) => {
-        const popupFind = btn.closest('.popup');
-        closePopup(popupFind);
-    });
-}
-
-for(const btn of popups) {
-  btn.addEventListener('click', (evt) => {
-    if(evt.target !== evt.currentTarget) {
-     return;
+popups.forEach((popup) => {
+  popup.addEventListener('mousedown',(evt) => {
+    if(evt.target.classList.contains('popup_opened')) {
+      closePopup(popup);
     }
-    else {
-      const popupFind = btn.closest(".popup");
-      closePopup(popupFind);
+    if(evt.target.classList.contains('popup__close')) {
+      closePopup(popup);
     }
   })
-}
+})

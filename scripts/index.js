@@ -17,7 +17,8 @@ const cardTemplate = document.querySelector('#element-template').content;
 const cardsContainer = document.querySelector('.elements');
 const overlay = document.body;
 const popups = document.querySelectorAll('.popup');
-const popupAddButton = document.querySelector("#popup__add-button");
+const inputList = Array.from(cardAddForm.querySelectorAll('.popup__text'));
+const buttonAddCard = cardAddForm.querySelector('.popup__save-button');
 
 function closeByEscape(evt) {
   if (evt.key === "Escape") {
@@ -86,8 +87,7 @@ cardAddForm.addEventListener('submit', (evt) => {
     addCard(card);
     closePopup(popupAdd);
     cardAddForm.reset();
-    popupAddButton.classList.add("popup__save-button_disabled");
-    popupAddButton.disabled = true;
+    toggleButtonState(inputList, buttonAddCard, enableValidationConfig);
 })
 
 initialCards.forEach(function (card) {

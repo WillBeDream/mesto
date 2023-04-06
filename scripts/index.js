@@ -17,6 +17,7 @@ const cardTemplate = document.querySelector('#element-template').content;
 const cardsContainer = document.querySelector('.elements');
 const overlay = document.body;
 const popups = document.querySelectorAll('.popup');
+const popupAddButton = document.querySelector("#popup__add-button");
 
 function closeByEscape(evt) {
   if (evt.key === "Escape") {
@@ -52,11 +53,6 @@ function handleProfileFormSubmit(evt) {
     closePopup(popupEdit);
 }
 
-function handleAddCardSubmit(evt) {
-  evt.preventDefault;
-  enableValidation(enableValidationConfig);
-}
-
 function createCard(cardData) {
     const card = cardTemplate.querySelector('.element').cloneNode(true);
     const photo = card.querySelector('.element__photo');
@@ -90,6 +86,8 @@ cardAddForm.addEventListener('submit', (evt) => {
     addCard(card);
     closePopup(popupAdd);
     cardAddForm.reset();
+    popupAddButton.classList.add("popup__save-button_disabled");
+    popupAddButton.disabled = true;
 })
 
 initialCards.forEach(function (card) {
@@ -99,7 +97,6 @@ initialCards.forEach(function (card) {
 profileAddBtn.addEventListener('click', openAddPopup);
 profileEditForm.addEventListener('submit', handleProfileFormSubmit);
 buttonEditProfile.addEventListener('click', openEditPopup);
-cardAddForm.addEventListener('submit', handleAddCardSubmit);
 
 popups.forEach((popup) => {
   popup.addEventListener('mousedown',(evt) => {

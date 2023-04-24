@@ -7,6 +7,9 @@ const enableValidationConfig = {
   errorClass: "popup__error_visible",
 };
 
+export default enableValidationConfig;
+
+/*
 const showInputError = (formElement, inputElement, errorMessage, settings) => {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.add(settings.inputErrorClass);
@@ -64,3 +67,4 @@ const enableValidation = (settings) => {
 };
 
 enableValidation(enableValidationConfig);
+*/

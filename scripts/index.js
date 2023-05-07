@@ -1,8 +1,11 @@
-import initialCards from "./cards.js";
-import enableValidationConfig from "./constants.js";
-import Card from "./Сard.js";
-import FormValidator from "./FormValidator.js";
-import {openPopup, closePopup } from "./utils.js";
+import initialCards from "../utils/cards.js";
+import enableValidationConfig from "../utils/constants.js";
+import Card from "../components/Сard.js";
+import FormValidator from "../components/FormValidator.js";
+import {openPopup, closePopup } from "../utils/utils.js";
+import Section from "../components/Section.js";
+import Popup from "../components/Popup.js";
+import PopupWithImage from "../components/PopupWithImage.js";
 
 const buttonEditProfile = document.querySelector(".profile__edit-button"); //editBtn
 const popupEdit = document.querySelector(".popup-edit");
@@ -24,6 +27,12 @@ const editFormValidator = new FormValidator(
   profileEditForm,
   enableValidationConfig
 );
+
+const popupAddObj = new Popup('.popup-add');
+popupAddObj.setEventListeners();
+const popupEidtObj = new Popup('.popup-edit');
+popupEidtObj.setEventListeners();
+const popupImageObj = new PopupWithImage(".popup_show-image");
 
 function openEditPopup() {
   openPopup(popupEdit);
@@ -57,14 +66,32 @@ cardAddForm.addEventListener("submit", (evt) => {
   addFormValidator.toggleButtonState();
 });
 
+/*
 initialCards.forEach(function (card) {
   addCard(card);
+});*/
+
+const cardList = new Section(
+  {
+    items: initialCards,
+    renderer: (item) => {
+      const card = new Card(item, "#element-template", popupImage);
+      const cardElement = card.createCard();
+      cardList.addItem(cardElement);
+    }
+  }, '.elements');
+
+cardList.renderItems();
+
+profileAddBtn.addEventListener("click", ()=> {
+  popupAddObj.open();
+});
+profileEditForm.addEventListener("submit", handleProfileFormSubmit);
+buttonEditProfile.addEventListener("click", ()=> {
+  popupEidtObj.open();
 });
 
-profileAddBtn.addEventListener("click", openAddPopup);
-profileEditForm.addEventListener("submit", handleProfileFormSubmit);
-buttonEditProfile.addEventListener("click", openEditPopup);
-
+/*
 popups.forEach((popup) => {
   popup.addEventListener("mousedown", (evt) => {
     if (evt.target.classList.contains("popup_opened")) {
@@ -74,7 +101,7 @@ popups.forEach((popup) => {
       closePopup(popup);
     }
   });
-});
+});*/
 
 editFormValidator.enableValidation();
 addFormValidator.enableValidation();

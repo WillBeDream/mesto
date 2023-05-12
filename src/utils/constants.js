@@ -7,4 +7,21 @@ const enableValidationConfig = {
   errorClass: "popup__error_visible",
 };
 
-export default enableValidationConfig;
+const dataProfile = {
+  nameSelector: ".profile__title",
+  descriptionSelector: ".profile__description",
+};
+
+const buttonEditProfile = document.querySelector(".profile__edit-button"); //editBtn
+const profileEditForm = document.forms["edit-form"]; //saveForm
+const profileAddBtn = document.querySelector(".profile__add-button"); //addBtn
+const cardAddForm = document.forms["add-form"]; //addElem
+
+export {
+  enableValidationConfig,
+  dataProfile,
+  buttonEditProfile,
+  profileEditForm,
+  profileAddBtn,
+  cardAddForm,
+};

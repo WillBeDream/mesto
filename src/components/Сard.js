@@ -33,14 +33,22 @@ export default class Card {
     this._handlePopupImageOpen(this._title, this._image);
   }
 
+  _toggleLike() {
+    this._buttonLike.classList.toggle("element__like_active");
+  }
+
+  _deleteCard() {
+    this._element.remove();
+  }
+
   _setEventListeners() {
     this._buttonLike.addEventListener("click", () => {
-      this._buttonLike.classList.toggle("element__like_active");
+      this._toggleLike();
     });
     this._element
       .querySelector(".element__remove")
       .addEventListener("click", () => {
-        this._element.remove();
+        this._deleteCard();
       });
 
     this._photo.addEventListener('click', this._openImage);

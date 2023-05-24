@@ -10,12 +10,15 @@ const enableValidationConfig = {
 const dataProfile = {
   nameSelector: ".profile__title",
   descriptionSelector: ".profile__description",
+  profileSelector: '.profile__avatar',
 };
 
 const buttonEditProfile = document.querySelector(".profile__edit-button"); //editBtn
 const profileEditForm = document.forms["edit-form"]; //saveForm
 const profileAddBtn = document.querySelector(".profile__add-button"); //addBtn
 const cardAddForm = document.forms["add-form"]; //addElem
+const profileAvatar = document.querySelector('.profile__avatar-edit');
+const avatarForm = document.forms['avatar-form'];
 
 export {
   enableValidationConfig,
@@ -24,4 +27,6 @@ export {
   profileEditForm,
   profileAddBtn,
   cardAddForm,
+  profileAvatar,
+  avatarForm,
 };

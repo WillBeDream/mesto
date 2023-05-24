@@ -15,7 +15,11 @@
 
         <main class="content">
             <section class="profile">
-                <img src="<%=require('./images/ussurijskij-tigr-1.jpg')%>" alt="аватар" class="profile__avatar">
+                <div class="profile__wrapper">
+                    <div class="profile__avatar-edit"></div>
+                    <img src="<%=require('./images/ussurijskij-tigr-1.jpg')%>" alt="аватар" class="profile__avatar">
+                </div>
+
                 <div class="profile__info">
                     <div class="profile__title-but">
                         <h1 class="profile__title">Жак-Ив Кусто</h1>
@@ -133,6 +137,28 @@
             </div>
         </div>
 
+        <div class="popup popup-avatar">
+          <div class="popup__container">
+            <button type="button" class="popup__close"></button>
+            <h2 class="popup__title">Обновить аватар</h2>
+            <form class="popup__set" name="avatar-form">
+              <label class="popup__field">
+                <input type="text" class="popup__text" id="add-avatar" name="add-avatar" placeholder="ссылка на картинку" required>
+                <span class="popup__error add-avatar-error"></span>
+              </label>
+              <button type="submit" class="popup__save-button">Сохранить</button>
+            </form>
+          </div>
+        </div>
+
+        <div class="popup popup-delete">
+          <div class="popup__container">
+            <button type="button" class="popup__close"></button>
+            <h2 class="popup__title">Вы уверены?</h2>
+            <button type="submit" class="popup__save-button">Да</button>
+          </div>
+        </div>
+
     </div>
 
     <template id="element-template">
@@ -141,7 +167,10 @@
             <button class="element__remove"></button>
             <div class="element__text-like">
                 <h2 class="element__text"></h2>
-                <button type="button" class="element__like"></button>
+                <div class="element__block-like">
+                  <button type="button" class="element__like"></button>
+                  <p class="element__like-count">0</p>
+                </div>
             </div>
         </article>
     </template>

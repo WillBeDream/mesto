@@ -13,7 +13,6 @@ export default class Card {
     this._handlePopupImageOpen = handlePopupImageOpen;
     this._handlePopupConfirm = handlePopupConfirm;
     this._handleLike = handleLike;
-    console.log(this._likes);
   }
 
   _getTemplate() {

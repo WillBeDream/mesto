@@ -29,16 +29,20 @@ export default class PopupWithForm extends Popup {
     this._popupForm.reset();
   }
 
-  startRender() {
-    this._button.textContent = `${this._button.textContent}...`;
-  }
-
-  endRender() {
-    this._button.textContent = this._buttonCommonText;
+  renderLoading(isLoading) {
+    if(isLoading) {
+      this._button.textContent = `${this._button.textContent}...`;
+    }
+    else {
+      this._button.textContent = this._buttonCommonText;
+    }
   }
 
   setEventListeners() {
     super.setEventListeners();
-    this._popupForm.addEventListener('submit', this._handleFormSubmit);
+    this._popupForm.addEventListener('submit', (evt)=>{
+      evt.preventDefault();
+      this._handleFormSubmit(this.getInputValues());
+    });
   }
 }
